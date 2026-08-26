@@ -1,0 +1,115 @@
+6D results:
+----------
+Execution log
+12:46:24 PM	Notice	Execution started
+12:46:24 PM	Info	=================================
+12:46:24 PM	Info	STEP 6D — SHEETS → GEMINI TEST
+12:46:24 PM	Info	=================================
+12:46:24 PM	Info	Gemini API key found.
+12:46:24 PM	Info	Sheet found: 90 Content Calendar
+12:46:26 PM	Info	Total rows found: 90
+12:46:26 PM	Info	All required columns found successfully.
+12:46:26 PM	Info	Today's date: 2026-08-26
+12:46:26 PM	Info	Spreadsheet timezone: Asia/Calcutta
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	Today's READY content: 3
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	CONTENT SELECTED
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	Sheet Row: 8
+12:46:26 PM	Info	Account: AICoreStack
+12:46:26 PM	Info	Content Type: Reel
+12:46:26 PM	Info	Topic: Behind the scenes
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	CONTENT + GENERATION PROMPT
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	Topic:
+Behind the scenes
+
+Hook:
+This is what happens before the final video.
+
+Prompt:
+Show a creator brainstorming, generating AI clips, rejecting weak generations, editing a timeline, refining details, then revealing the final cinematic shot. Natural workspace, realistic process.
+
+On-Screen Text:
+This is what happens before the final video.
+
+CTA:
+Want this style for your brand? DM us.
+12:46:26 PM	Info	=================================
+12:46:26 PM	Info	SENDING CONTENT TO GEMINI...
+12:46:26 PM	Info	=================================
+12:48:43 PM	Info	Gemini HTTP Response: 200
+12:48:43 PM	Info	=================================
+12:48:43 PM	Info	GEMINI IMPROVED PROMPT
+12:48:43 PM	Info	=================================
+12:48:43 PM	Info	Cinematic and realistic behind-the-scenes footage of a content creator in a natural, professional workspace. The sequence shows the creator brainstorming ideas, generating AI video clips on a dual-monitor setup, reviewing and rejecting weak generations, editing a timeline in a professional NLE software, and refining visual details. The video culminates in a seamless transition revealing the final polished cinematic shot. Aspect ratio 9:16, professional studio lighting, realistic workflow details, shallow depth of field.
+12:48:43 PM	Info	=================================
+12:48:43 PM	Info	STEP 6D TEST COMPLETE
+12:48:43 PM	Info	Google Sheet was NOT modified.
+12:48:43 PM	Info	=================================
+12:48:43 PM	Notice	Execution completed
+
+
+
+6E: results:
+------------
+Execution log
+1:37:32 PM	Notice	Execution started
+1:37:32 PM	Info	=================================
+1:37:32 PM	Info	STEP 6E — GEMINI STRUCTURED OUTPUT
+1:37:32 PM	Info	=================================
+1:37:32 PM	Info	Gemini API key found.
+1:37:32 PM	Info	Sheet found: 90 Content Calendar
+1:37:32 PM	Info	All required columns found successfully.
+1:37:32 PM	Info	Today's date: 2026-08-26
+1:37:32 PM	Info	Spreadsheet timezone: Asia/Calcutta
+1:37:32 PM	Info	Today's READY content: 3
+1:37:32 PM	Info	=================================
+1:37:32 PM	Info	CONTENT SELECTED
+1:37:32 PM	Info	=================================
+1:37:32 PM	Info	Sheet Row: 8
+1:37:32 PM	Info	Account: AICoreStack
+1:37:32 PM	Info	Content Type: Reel
+1:37:32 PM	Info	Topic: Behind the scenes
+1:37:32 PM	Info	=================================
+1:37:32 PM	Info	SENDING CONTENT TO GEMINI
+1:37:32 PM	Info	=================================
+1:37:43 PM	Info	Gemini HTTP Response: 200
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	STRUCTURED GEMINI OUTPUT
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	Video Prompt:
+Cinematic behind-the-scenes sequence in a natural, modern workspace. A creator is seen brainstorming ideas on a desk, generating AI clips on a monitor, quickly rejecting weak generations, fine-tuning an editing timeline, and meticulously refining details. The sequence culminates in a smooth transition revealing the final polished cinematic shot. Realistic process, natural lighting, high production value.
+1:37:43 PM	Info	On-Screen Text:
+This is what happens before the final video.
+1:37:43 PM	Info	CTA:
+Want this style for your brand? DM us.
+1:37:43 PM	Info	Caption:
+A behind-the-scenes look at the real workflow behind cinematic AI video creation. From initial concept generation and prompt iteration to timeline editing and final polish, here is what it takes to produce high-end AI content for brands.
+1:37:43 PM	Info	SEO Keywords:
+AI video creation, AI video for brands, cinematic AI videos, AI product videos, product launch videos, brand video, AI commercial, AI video editing
+1:37:43 PM	Info	Hashtags:
+#AIVideo #AIForBusiness #ProductVideo #AIMarketing #AICoreStack
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	RAW STRUCTURED JSON
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	{
+  "video_prompt": "Cinematic behind-the-scenes sequence in a natural, modern workspace. A creator is seen brainstorming ideas on a desk, generating AI clips on a monitor, quickly rejecting weak generations, fine-tuning an editing timeline, and meticulously refining details. The sequence culminates in a smooth transition revealing the final polished cinematic shot. Realistic process, natural lighting, high production value.",
+  "on_screen_text": "This is what happens before the final video.",
+  "cta": "Want this style for your brand? DM us.",
+  "caption": "A behind-the-scenes look at the real workflow behind cinematic AI video creation. From initial concept generation and prompt iteration to timeline editing and final polish, here is what it takes to produce high-end AI content for brands.",
+  "seo_keywords": "AI video creation, AI video for brands, cinematic AI videos, AI product videos, product launch videos, brand video, AI commercial, AI video editing",
+  "hashtags": "#AIVideo #AIForBusiness #ProductVideo #AIMarketing #AICoreStack"
+}
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	STEP 6E TEST COMPLETE
+1:37:43 PM	Info	=================================
+1:37:43 PM	Info	Google Sheet was NOT modified.
+1:37:43 PM	Info	Veo was NOT called.
+1:37:43 PM	Info	Google Drive was NOT modified.
+1:37:43 PM	Info	Meta API was NOT called.
+1:37:43 PM	Info	=================================
+1:37:43 PM	Notice	Execution completed

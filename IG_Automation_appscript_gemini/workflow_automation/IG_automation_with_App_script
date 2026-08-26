@@ -1,0 +1,348 @@
+Absolutely. Here is the **full 1–12 roadmap** for the automation we're building.
+
+### 🚀 AICoreStack Content Automation — Full Roadmap
+
+**Step 1: Content Calendar Setup**
+Google Sheets becomes the central database containing:
+
+* Date
+* Account
+* Content Type
+* Topic
+* Generation Prompt
+* Caption
+* SEO Keywords
+* Hashtags
+* Audio / Editing Direction
+* Status
+* Approval
+* Asset URL
+* Publish Time
+* IG Status
+
+**Step 2: Google Sheets → Apps Script Connection**
+Connect Apps Script to your Google Sheet and verify that the script can:
+
+* Read the calendar
+* Find today's content
+* Read individual rows
+* Read all required columns
+
+**Step 3: Content Selection & Status System**
+Build the workflow around statuses:
+
+`READY → PROCESSING → GENERATED → APPROVED → SCHEDULED → PUBLISHED`
+
+This prevents the same content from being processed twice.
+
+**Step 4: Content Processing** ✅ **DONE**
+Apps Script now correctly reads:
+
+* Account
+* Reel/Post/Carousel
+* Topic
+* Generation Prompt
+* Caption
+* SEO
+* Hashtags
+* Audio direction
+* Repurpose notes
+
+and changes:
+
+`READY → PROCESSING`
+
+---
+
+### **Step 5: Google Drive Asset System**
+
+Create the Drive structure for your three accounts, for example:
+
+```text
+AICoreStack Automation/
+│
+├── AICoreStack/
+│   ├── Reels/
+│   ├── Posts/
+│   └── Carousels/
+│
+├── ScaleWithAIAndTech/
+│   ├── Reels/
+│   ├── Posts/
+│   └── Carousels/
+│
+└── UpSkill With AI & Digital/
+    ├── Reels/
+    ├── Posts/
+    └── Carousels/
+```
+
+Apps Script will eventually save the generated files and put the Drive link into **Asset URL**.
+
+---
+
+### **Step 6: Gemini API**
+
+Connect Gemini to Apps Script.
+
+Gemini will handle things such as:
+
+* Reading your generation prompt
+* Refining/structuring prompts
+* Generating captions where needed
+* Creating variations for different accounts
+* Checking content before publishing
+* Helping determine whether the content is Reel/Post/Carousel
+
+Flow:
+
+```text
+Google Sheet
+     ↓
+Apps Script
+     ↓
+Gemini API
+     ↓
+Final content instructions
+```
+
+---
+
+### **Step 7: Veo Video Generation**
+
+Connect the video-generation part.
+
+For eligible Reel/video rows:
+
+```text
+Generation Prompt
+       ↓
+Gemini / Apps Script
+       ↓
+Veo
+       ↓
+Video
+       ↓
+Google Drive
+```
+
+This is where we need to decide the **exact Google video-generation API/product route** available to your account, because using Veo through a consumer subscription and using Veo through an API are not necessarily the same thing.
+
+---
+
+### **Step 8: Google Drive Asset Handling**
+
+Once content is generated:
+
+```text
+Video/Image
+    ↓
+Google Drive
+    ↓
+Asset URL
+    ↓
+Google Sheets
+```
+
+The Sheet becomes your control panel.
+
+Example:
+
+| Status    | Asset URL        |
+| --------- | ---------------- |
+| GENERATED | Drive video link |
+
+For a Reel, we can also keep metadata such as:
+
+* File name
+* Drive URL
+* Content type
+* Account
+* Generation date
+
+---
+
+### **Step 9: Meta / Instagram API**
+
+Connect your Instagram professional accounts through Meta's platform.
+
+The automation will eventually be able to work toward:
+
+```text
+Google Sheet
+     ↓
+Apps Script
+     ↓
+Drive Asset
+     ↓
+Meta API
+     ↓
+Instagram
+```
+
+We will need to configure things such as:
+
+* Meta developer app
+* Facebook Page connection
+* Instagram professional account
+* Access tokens
+* Instagram permissions
+* Account IDs
+* Publishing permissions
+
+This is one of the more important security steps.
+
+---
+
+### **Step 10: Automatic Scheduling**
+
+Use your **Publish Time** column.
+
+Example:
+
+```text
+Date: 2026-08-27
+Publish Time: 20:00
+Account: AICoreStack
+Type: Reel
+Status: APPROVED
+```
+
+The automation checks the schedule and publishes when appropriate.
+
+Eventually:
+
+```text
+READY
+ ↓
+PROCESSING
+ ↓
+GENERATED
+ ↓
+APPROVED
+ ↓
+SCHEDULED
+ ↓
+PUBLISHED
+```
+
+---
+
+### **Step 11: Approval + Safety Controls**
+
+I strongly recommend **not making the system 100% automatic from day one**.
+
+Initially:
+
+```text
+AI generates content
+        ↓
+You review
+        ↓
+Approval = YES
+        ↓
+Automation publishes
+```
+
+Your Google Sheet becomes the approval dashboard.
+
+For example:
+
+```text
+Status: GENERATED
+Approval: NO
+```
+
+You review the video.
+
+Then:
+
+```text
+Approval: YES
+```
+
+Only then can the Meta publishing stage proceed.
+
+We can also add protections such as:
+
+* Don't publish if Approval ≠ YES
+* Don't process the same row twice
+* Don't publish if Asset URL is empty
+* Don't publish if Publish Time is empty
+* Don't publish if IG Status = PUBLISHED
+* Log API errors
+* Retry failed generations
+* Keep API keys out of the spreadsheet
+
+---
+
+### **Step 12: Daily Automatic Trigger**
+
+Finally, Apps Script runs automatically.
+
+For example:
+
+```text
+Every 15 minutes
+       ↓
+Check Google Sheet
+       ↓
+Find today's READY content
+       ↓
+Process content
+       ↓
+Generate asset
+       ↓
+Save to Drive
+       ↓
+Wait for approval
+       ↓
+Publish at scheduled time
+       ↓
+Update Google Sheet
+```
+
+Your Sheet becomes the **control center**, while Apps Script acts as the automation engine.
+
+---
+
+## Overall architecture
+
+The final system we're building is essentially:
+
+```text
+                    GOOGLE SHEETS
+                         │
+                         ▼
+                    APPS SCRIPT
+                         │
+             ┌───────────┴───────────┐
+             ▼                       ▼
+          GEMINI                    VEO
+       AI processing            Video generation
+             │                       │
+             └───────────┬───────────┘
+                         ▼
+                    GOOGLE DRIVE
+                         │
+                         ▼
+                    APPROVAL
+                         │
+                         ▼
+                    META API
+                         │
+                         ▼
+               INSTAGRAM ACCOUNTS
+                         │
+             ┌───────────┼───────────┐
+             ▼           ▼           ▼
+         AICoreStack   ScaleWithAI   UpSkill
+```
+
+### Where we are now
+
+**Steps 1–4: ✅ Complete**
+
+**Next → Step 5: Google Drive Asset System**
+
+And importantly, we should **not jump straight into Veo or Meta yet**. We'll build and test each layer independently so that if something fails, we know exactly which component caused it.
